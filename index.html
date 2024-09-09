@@ -19,7 +19,7 @@
                 <li><a href="#">الرئيسية</a></li>
                 <li><a href="#">المانهوا</a></li>
                 <li><a href="#">فريق العمل</a></li>
-                <li><a href="#" id="login-btn">تسجيل الدخول</a></li> <!-- زر تسجيل الدخول -->
+                <li><a href="#">تسجيل الدخول</a></li>
             </ul>
         </nav>
     </header>
@@ -38,45 +38,7 @@
         <p>&copy; 2024 KH Manga. كل الحقوق محفوظة.</p>
     </footer>
 
-    <!-- تضمين Firebase والمكتبات الأخرى -->
-    <script type="module">
-        // استيراد مكتبات Firebase المطلوبة
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
-
-        // إعداد Firebase الخاص بالتطبيق
-        const firebaseConfig = {
-            apiKey: "AIzaSyDYw9gtJQrHvDKGNV5TroBr0H9I3dPAw0Q",
-            authDomain: "kh-manga.firebaseapp.com",
-            projectId: "kh-manga",
-            storageBucket: "kh-manga.appspot.com",
-            messagingSenderId: "976404474089",
-            appId: "1:976404474089:web:dacfb12fe29b40cad6e878",
-            measurementId: "G-FXJ27GMDRZ"
-        };
-
-        // تهيئة Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = getAuth(app);
-
-        // إعداد تسجيل الدخول باستخدام Google
-        const provider = new GoogleAuthProvider();
-        const loginButton = document.getElementById("login-btn");
-
-        loginButton.addEventListener("click", () => {
-            signInWithPopup(auth, provider)
-                .then((result) => {
-                    const user = result.user;
-                    alert(`مرحبًا ${user.displayName}! تم تسجيل الدخول بنجاح.`);
-                    console.log(user); // يمكنك استخدام هذه المعلومة لمزيد من العمليات
-                })
-                .catch((error) => {
-                    console.error(error);
-                    alert(`حدث خطأ أثناء تسجيل الدخول: ${error.message}`);
-                });
-        });
-    </script>
+    <!-- ربط ملف الـ JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
