@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KH Manga - الصفحة الرئيسية</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <!-- شَرَط -->
@@ -24,7 +25,12 @@
     <!-- الهيدر بتاع الموقع -->
     <header>
         <div class="logo">
-            <h1>KH Manga</h1>
+            <h1>KH Manga <i class="fas fa-spa"></i></h1>
+        </div>
+        <!-- مربع البحث -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="ابحث هنا...">
+            <button id="search-button">بحث</button>
         </div>
     </header>
 
@@ -33,6 +39,9 @@
         <h2>مرحبًا بكم في KH Manga</h2>
         <p>هنا يمكنك قراءة أحدث الفصول المترجمة من المانهوا المفضلة لديك.</p>
         <button id="add-manhwa-button">إضافة مانهوا</button>
+
+        <!-- نتائج البحث -->
+        <div id="search-results"></div>
     </div>
 
     <!-- نافذة منبثقة لرفع الملفات -->
