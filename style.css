@@ -140,3 +140,19 @@ footer {
     background-size: cover;
     background-position: center;
 }
+
+/* تنسيق زر الإضافة */
+#add-manhwa-button {
+    background-color: #4CAF50; /* اللون الأخضر */
+    color: white; /* لون النص */
+    padding: 10px 20px; /* المسافات الداخلية للزر */
+    border: none; /* إزالة الإطار */
+    cursor: pointer; /* تغيير المؤشر عند الوقوف على الزر */
+    font-size: 16px; /* حجم الخط */
+    margin: 20px; /* المسافات حول الزر */
+}
+
+/* تأثير عند المرور بالماوس على الزر */
+#add-manhwa-button:hover {
+    background-color: #45a049; /* تغيير اللون عند المرور */
+}
