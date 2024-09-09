@@ -4,37 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KH Manga - الصفحة الرئيسية</title>
-    <link rel="stylesheet" href="style.css"> <!-- ربط ملف الـ CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- شَرَط -->
+    <div id="menu-toggle" class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- القائمة الجانبية -->
+    <div id="side-menu" class="side-menu">
+        <a href="index.html">الصفحة الرئيسية</a>
+        <a href="manhwa.html">المانهوا</a>
+        <a href="search.html">بحث</a>
+    </div>
+
     <!-- الهيدر بتاع الموقع -->
     <header>
         <div class="logo">
             <h1>KH Manga</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">المانهوا</a></li>
-                <li><a href="#">فريق العمل</a></li>
-                <li><a href="#">تسجيل الدخول</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- محتوى الصفحة الرئيسية -->
     <div class="content">
         <h2>مرحبًا بكم في KH Manga</h2>
         <p>هنا يمكنك قراءة أحدث الفصول المترجمة من المانهوا المفضلة لديك.</p>
-
-        <!-- زر إضافة المانهوا -->
-        <button id="add-manhwa-button" style="display: none;">إضافة مانهوا</button>
-
-        <!-- نموذج رفع الملفات -->
-        <div id="upload-form" style="display: none;">
-            <input type="file" id="file-input" multiple />
-            <button id="submit-upload">رفع الملفات</button>
-        </div>
+        <button id="add-manhwa-button">إضافة مانهوا</button>
     </div>
 
     <!-- الفوتر بتاع الموقع -->
@@ -42,6 +40,6 @@
         <p>&copy; 2024 KH Manga. كل الحقوق محفوظة.</p>
     </footer>
 
-    <script src="script.js"></script> <!-- ربط ملف الـ JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
