@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeModal = document.querySelector(".close");
     const fileInput = document.getElementById("file-input");
     const uploadButton = document.getElementById("upload-button");
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+    const searchResults = document.getElementById("search-results");
 
     menuToggle.addEventListener("click", function() {
         sideMenu.classList.toggle("show");
@@ -38,5 +41,12 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             alert('تم رفع الملف بنجاح!'); // هنا يتم رفع الملف للخادم الحقيقي
         }
+    });
+
+    // البحث والفلترة
+    searchButton.addEventListener("click", function() {
+        const query = searchInput.value.toLowerCase();
+        // إضافة الأكواد لتصفية النتائج حسب البحث
+        searchResults.innerHTML = `<p>نتائج البحث عن: ${query}</p>`; // يمكنك تحسين طريقة العرض كما تفضلين
     });
 });
