@@ -5,4 +5,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isAdmin) {
         document.getElementById("add-manhwa-button").style.display = "block";
     }
+
+    // Event listener for the "إضافة مانهوا" button
+    document.getElementById("add-manhwa-button").addEventListener("click", function() {
+        document.getElementById("upload-form").style.display = "block";
+    });
+
+    // Event listener for the "رفع الملفات" button
+    document.getElementById("submit-upload").addEventListener("click", function() {
+        const fileInput = document.getElementById("file-input");
+        const files = fileInput.files;
+        if (files.length > 0) {
+            alert("تم اختيار " + files.length + " ملف.");
+            // هنا يمكنك إضافة كود لمعالجة الملفات إذا لزم الأمر
+        } else {
+            alert("يرجى اختيار ملف للرفع.");
+        }
+    });
 });
