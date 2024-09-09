@@ -1,158 +1,43 @@
-/* styles.css */
-
 body {
-
     font-family: Arial, sans-serif;
-
     margin: 0;
-
     padding: 0;
-
-    background-color: #f0f0f0;
-
+    background-color: #f4f4f4;
 }
 
 header {
-
     background-color: #333;
-
-    color: white;
-
+    color: #fff;
     padding: 10px 0;
-
     text-align: center;
-
 }
 
 nav ul {
-
-    list-style-type: none;
-
+    list-style: none;
     padding: 0;
-
-    margin: 0;
-
-    display: flex;
-
-    justify-content: center;
-
 }
 
 nav ul li {
-
-    margin: 0 15px;
-
+    display: inline;
+    margin: 0 10px;
 }
 
 nav ul li a {
-
-    color: white;
-
+    color: #fff;
     text-decoration: none;
-
 }
 
-.main {
-
-    padding: 20px;
-
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-}
-
-.manhwa-list {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    justify-content: space-around;
-
-}
-
-.manhwa-item {
-
-    background-color: white;
-
-    padding: 10px;
-
-    margin: 15px;
-
-    width: 200px;
-
+.content {
     text-align: center;
-
-    border-radius: 8px;
-
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-}
-
-.manhwa-item img {
-
-    width: 100%;
-
-    border-radius: 8px;
-
-}
-
-.read-btn {
-
-    display: inline-block;
-
-    margin-top: 10px;
-
-    padding: 5px 10px;
-
-    background-color: #333;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 4px;
-
+    padding: 20px;
 }
 
 footer {
-
     background-color: #333;
-
-    color: white;
-
+    color: #fff;
     text-align: center;
-
     padding: 10px 0;
-
     position: fixed;
-
     width: 100%;
-
     bottom: 0;
-
-}
-.main-container {
-    width: 100%;
-    height: 100vh;
-    background-image: url('images/بدون اسم6_20240909011141.png');
-    background-size: cover;
-    background-position: center;
-}
-
-/* تنسيق زر الإضافة */
-#add-manhwa-button {
-    background-color: #4CAF50; /* اللون الأخضر */
-    color: white; /* لون النص */
-    padding: 10px 20px; /* المسافات الداخلية للزر */
-    border: none; /* إزالة الإطار */
-    cursor: pointer; /* تغيير المؤشر عند الوقوف على الزر */
-    font-size: 16px; /* حجم الخط */
-    margin: 20px; /* المسافات حول الزر */
-}
-
-/* تأثير عند المرور بالماوس على الزر */
-#add-manhwa-button:hover {
-    background-color: #45a049; /* تغيير اللون عند المرور */
 }
