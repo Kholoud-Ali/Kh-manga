@@ -32,6 +32,20 @@ nav ul li a {
     padding: 20px;
 }
 
+#add-manhwa-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden by default, will be shown if admin */
+}
+
+#add-manhwa-button:hover {
+    background-color: #0056b3;
+}
+
 footer {
     background-color: #333;
     color: #fff;
