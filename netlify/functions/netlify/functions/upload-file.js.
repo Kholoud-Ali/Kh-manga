@@ -1,0 +1,37 @@
+const multiparty = require('multiparty');
+const fs = require('fs');
+
+exports.handler = async (event, context) => {
+  const form = new multiparty.Form();
+
+  return new Promise((resolve, reject) => {
+    form.parse(event, (err, fields, files) => {
+      if (err) {
+        console.error(err);
+        return resolve({
+          statusCode: 500,
+          body: JSON.stringify({ error: 'Error in file upload' }),
+        });
+      }
+
+      const file = files.file[0];
+      const tempPath = file.path;
+      const destPath = `/tmp/${file.originalFilename}`;
+
+      fs.rename(tempPath, destPath, (err) => {
+        if (err) {
+          console.error(err);
+          return resolve({
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Error saving file' }),
+          });
+        }
+
+        resolve({
+          statusCode: 200,
+          body: JSON.stringify({ message: 'File uploaded successfully', path: destPath }),
+        });
+      });
+    });
+  });
+};
