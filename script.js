@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     menuToggle.addEventListener("click", function() {
         sideMenu.classList.toggle("show");
+        menuToggle.classList.toggle("active");
     });
 
     addManhwaButton.addEventListener("click", function() {
