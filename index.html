@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KH Manga - الصفحة الرئيسية</title>
-    <link rel="stylesheet" href="style.css"> <!-- ربط ملف الـ CSS -->
-    <!-- إضافة Firebase Config -->
+    <link rel="stylesheet" href="style.css">
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
       import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
@@ -26,19 +25,18 @@
       const auth = getAuth(app);
       const provider = new GoogleAuthProvider();
 
-      // وظيفة تسجيل الدخول باستخدام جوجل
-      function signInWithGoogle() {
-        signInWithPopup(auth, provider)
-          .then((result) => {
-            const user = result.user;
-            console.log('User signed in:', user);
-          })
-          .catch((error) => {
-            console.error('Error during sign-in:', error);
-          });
+      // Function for Google sign-in
+      async function signInWithGoogle() {
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result.user;
+          console.log('User signed in:', user);
+        } catch (error) {
+          console.error('Error during sign-in:', error);
+        }
       }
 
-      // إضافة حدث النقر على رابط تسجيل الدخول
+      // Add event listener to login link
       document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('login-link').addEventListener('click', (event) => {
           event.preventDefault();
@@ -48,14 +46,11 @@
     </script>
 </head>
 <body>
-    <!-- الهيدر بتاع الموقع -->
     <header>
         <div class="logo">
-            <!-- هنا بتحطي اللوجو الخاص بالموقع -->
             <h1>KH Manga</h1>
         </div>
         <nav>
-            <!-- قائمة الروابط الأساسية -->
             <ul>
                 <li><a href="#">الرئيسية</a></li>
                 <li><a href="#">المانهوا</a></li>
@@ -65,16 +60,12 @@
         </nav>
     </header>
 
-    <!-- محتوى الصفحة الرئيسية -->
     <div class="content">
         <h2>مرحبًا بكم في KH Manga</h2>
         <p>هنا يمكنك قراءة أحدث الفصول المترجمة من المانهوا المفضلة لديك.</p>
-
-        <!-- زر إضافة المانهوا (بيظهر ليكي بس) -->
         <button id="add-manhwa-button" style="display: none;">إضافة مانهوا</button>
     </div>
 
-    <!-- الفوتر بتاع الموقع -->
     <footer>
         <p>&copy; 2024 KH Manga. كل الحقوق محفوظة.</p>
     </footer>
