@@ -5,6 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KH Manga - الصفحة الرئيسية</title>
     <link rel="stylesheet" href="style.css"> <!-- ربط ملف الـ CSS -->
+    <!-- إضافة Firebase Config -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+      import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDYw9gtJQrHvDKGNV5TroBr0H9I3dPAw0Q",
+        authDomain: "kh-manga.firebaseapp.com",
+        projectId: "kh-manga",
+        storageBucket: "kh-manga.appspot.com",
+        messagingSenderId: "976404474089",
+        appId: "1:976404474089:web:dacfb12fe29b40cad6e878",
+        measurementId: "G-FXJ27GMDRZ"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const provider = new GoogleAuthProvider();
+
+      // وظيفة تسجيل الدخول باستخدام جوجل
+      function signInWithGoogle() {
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            const user = result.user;
+            console.log('User signed in:', user);
+          })
+          .catch((error) => {
+            console.error('Error during sign-in:', error);
+          });
+      }
+
+      // إضافة حدث النقر على رابط تسجيل الدخول
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('login-link').addEventListener('click', (event) => {
+          event.preventDefault();
+          signInWithGoogle();
+        });
+      });
+    </script>
 </head>
 <body>
     <!-- الهيدر بتاع الموقع -->
@@ -19,7 +60,7 @@
                 <li><a href="#">الرئيسية</a></li>
                 <li><a href="#">المانهوا</a></li>
                 <li><a href="#">فريق العمل</a></li>
-                <li><a href="#">تسجيل الدخول</a></li>
+                <li><a href="#" id="login-link">تسجيل الدخول</a></li>
             </ul>
         </nav>
     </header>
@@ -37,8 +78,5 @@
     <footer>
         <p>&copy; 2024 KH Manga. كل الحقوق محفوظة.</p>
     </footer>
-
-    <!-- ربط ملف الـ JavaScript -->
-    <script src="script.js"></script>
 </body>
 </html>
